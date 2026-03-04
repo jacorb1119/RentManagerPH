@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentTrack Pro - Property Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root">
+        <div class="app-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-svg">
+                            <path d="M10 12h4"></path>
+                            <path d="M10 8h4"></path>
+                            <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                            <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                            <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h1 class="logo-text">RentManager<span class="logo-highlight">PH</span></h1>
+                </div>
+                
+                <nav class="nav-menu">
+                    
+                    <button class="nav-item active" data-page="properties">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+                            <path d="M10 12h4"></path>
+                            <path d="M10 8h4"></path>
+                            <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                            <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                            <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                        </svg>
+                        <span>Properties</span>
+                        <div class="active-indicator"></div>
+                    </button>
+                    
+                    <button class="nav-item" data-page="tenants">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Tenants</span>
+                    </button>
+                    
+                    <button class="nav-item" data-page="payments">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                            <line x1="2" x2="22" y1="10" y2="10"></line>
+                        </svg>
+                        <span>Payments</span>
+                    </button>
+                    
+                    <button class="nav-item" data-page="maintenance">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path>
+                        </svg>
+                        <span>Maintenance</span>
+                    </button>
+                </nav>
+                
+                <div class="user-profile">
+                    <div class="user-avatar"></div>
+                    <div class="user-info">
+                        <p class="user-name">John Landlord</p>
+                        <p class="user-plan">Premium Plan</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon">
+                        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Header -->
+                <header class="main-header">
+                    <div class="search-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.34-4.34"></path>
+                        </svg>
+                        <input type="text" placeholder="Search tenants..." class="search-input" id="searchInput">
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="notification-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bell-icon">
+                                <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                                <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path>
+                            </svg>
+                            <span class="notification-badge"></span>
+                        </button>
+                        <div class="divider"></div>
+                        <button class="add-property-btn" id="openModalBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5v14"></path>
+                            </svg>
+                            Add Tenant
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Content Area - Tenants Page -->
+                 <div class="content-area" id="propertiesPage" style="display: block;">
+                    <div class="content-wrapper">
+                        <div class="properties-section">
+                            <div class="section-header">
+                                <h2 class="section-title">Properties</h2>
+                                <span id="propertyCount" class="property-count"></span>
+                            </div>
+                            
+                            <div id="propertiesGrid" class="properties-grid">
+                                <!-- Properties will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Area - Properties Page (Hidden by default) -->
+                <div class="content-area" id="tenantsPage" style="display: none;">
+                    <div class="content-wrapper">
+                        <div class="tenants-section">
+                            <div class="section-header">
+                                <h2 class="section-title">Tenants</h2>
+                                <span id="tenantCount" class="tenant-count"></span>
+                            </div>
+                            
+                            <div class="card overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="tenants-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Tenant</th>
+                                                <th>Property</th>
+                                                <th>Lease Period</th>
+                                                <th>Status</th>
+                                                <th>Balance</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tenantsTableBody">
+                                            <!-- Tenants will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Popup for Adding Tenant -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Tenant</h3>
+                <button class="modal-close" id="closeModalBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <form id="tenantForm" class="modal-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" class="form-input" placeholder="e.g., John" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" class="form-input" placeholder="e.g., Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" class="form-input" placeholder="john.doe@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="property">Property *</label>
+                        <select id="property" class="form-input" required>
+                            <option value="">Select Property</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="unit">Unit *</label>
+                        <input type="text" id="unit" class="form-input" placeholder="e.g., A1, B2, etc." required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="leaseStart">Lease Start Date *</label>
+                        <input type="date" id="leaseStart" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="leaseEnd">Lease End Date *</label>
+                        <input type="date" id="leaseEnd" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rent">Monthly Rent ($) *</label>
+                        <input type="number" id="rent" class="form-input" placeholder="e.g., 1450" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="balance">Current Balance ($)</label>
+                        <input type="number" id="balance" class="form-input" placeholder="e.g., 0" min="0" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tenantStatus">Status</label>
+                        <select id="tenantStatus" class="form-input">
+                            <option value="Active">Active</option>
+                            <option value="Notice">Notice</option>
+                            <option value="Late">Late</option>
+                            <option value="Evicted">Evicted</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn-submit">Add Tenant</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Popup for Adding Property -->
+    <div class="modal-overlay" id="propertyModalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Property</h3>
+                <button class="modal-close" id="closePropertyModalBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <form id="propertyForm" class="modal-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="propertyTitle">Property Title *</label>
+                        <input type="text" id="propertyTitle" class="form-input" placeholder="e.g., Maple Avenue Apartments" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyAddress">Street Address *</label>
+                        <input type="text" id="propertyAddress" class="form-input" placeholder="e.g., 123 Maple Ave" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyCity">City *</label>
+                        <input type="text" id="propertyCity" class="form-input" placeholder="e.g., Springfield" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyPrice">Monthly Rent ($) *</label>
+                        <input type="number" id="propertyPrice" class="form-input" placeholder="e.g., 1450" min="0" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyUnits">Number of Units *</label>
+                        <input type="number" id="propertyUnits" class="form-input" placeholder="e.g., 12" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyStatus">Status *</label>
+                        <select id="propertyStatus" class="form-input" required>
+                            <option value="Occupied">Occupied</option>
+                            <option value="Vacant">Vacant</option>
+                            <option value="Maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyImage">Image URL (optional)</label>
+                        <input type="url" id="propertyImage" class="form-input" placeholder="https://example.com/image.jpg">
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancelPropertyBtn">Cancel</button>
+                    <button type="submit" class="btn-submit">Add Property</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
